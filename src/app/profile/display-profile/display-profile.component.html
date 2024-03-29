@@ -1,0 +1,41 @@
+<div class="profile-wrapper">
+    <div class="profile-header">
+        <h2>Profile Information</h2>
+    </div>
+    <div class="profile-details">
+        <div class="profile-image">
+            <img src="../../assets/fourth-page/user-profile.jpg" alt="Profile Image" width="150" height="150">
+        </div>
+        <div class="profile-data">
+            <div class="profile-field">
+                <label>Name:</label>
+                <span>{{ user?.name }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Surname:</label>
+                <span>{{ user?.surname }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Email:</label>
+                <span>{{ user?.email }}</span>
+            </div>
+            <div class="profile-field">
+                <label>PhoneNo:</label>
+                <span>{{user?.phone }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Date of Birth:</label>
+                <span>{{ user?.dob }}</span>
+            </div>
+            <div class="profile-field">
+                <label>Birth city:</label>
+                <span>{{ user?.birthCity }}</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- 
+So, if user is null or undefined, the expression {{ user?.name }} will simply output nothing, and no error will occur.
+If user is defined and has a name property, its value will be displayed as expected. -->

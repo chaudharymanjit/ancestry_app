@@ -1,0 +1,114 @@
+<div class="fun" style="background-image: linear-gradient(#FF8384, #FFFDE9);">
+
+<!--  -->
+
+<img src="../../assets/fifth-page/background.png" style="width:100%; height: fit-content;">
+
+
+<div class="content" style="margin-left: 10rem; padding: 1.85rem; margin-top: -.3rem;">
+
+  <div style="display: flex;">
+     <div style="height: 1rem;width: 0rem;margin-left: 0rem;;">
+        <img height="120" width="120" src="../../assets/fifth-page/image.jpg" style="border-radius: 5rem;margin-top: -6rem; margin-left: 3.5rem;">
+
+     </div>
+
+<div style="margin-left: 1rem; margin-top: 3rem;padding: 2rem; height: 13rem;background-color: rgba(132, 49, 49, 0.30); border-radius: 1rem;">
+    <div class="button">
+        <button routerLink="add"class="btn2">Add Profile
+            <img height="20" src="../../assets/fifth-page/boy.png">
+        </button>
+    </div>
+    <div class="button">
+        <button routerLink="tree" class="btn2">View in Tree
+            <img height="20" src="../../assets/fifth-page/editphoto.png">
+        </button>
+    </div>
+    <div class="button">
+        <button routerLink="edit" class="btn2">Edit Profile
+            <img  height="20" src="../../assets/fifth-page/treephoto.png">
+        </button>
+    </div>
+    <div class="button">
+        <button class="btn2">View Profile
+            <img height="20" src="../../assets/fifth-page/viewprofilePhoto.png">
+        </button>
+    </div>
+</div> 
+
+</div>
+
+<div class="content2">
+<form #addProduct="ngForm" (ngSubmit)="Add(addProduct.value)" style="margin-left:3rem; margin-top: 1.5rem;">
+
+    <div class="form-section">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="First Name" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="surname">Surname:</label>
+            <input type="text" id="surname" name="surname" placeholder="Last Name" ngModel required>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email Address" ngModel required>
+        </div>
+        <div class="form-group">
+            <label for="phone">PhoneNo:</label>
+            <input type="tel" id="phone" name="phone" placeholder="91+" ngModel>
+        </div>
+    </div>
+
+    <div class="form-section">
+        <div class="form-group" style="width: 11rem;">
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" ngModel required>
+        </div>
+        <div class="form-group" style="width: 12rem;">
+            <label for="birthCity">Birth City:</label>
+            <input type="text" id="birthCity" name="birthCity" placeholder="City" ngModel required>
+        </div>
+    </div>
+
+    <div class="form-section">
+
+        <div class="form-group">
+            <label for="Address">Address:</label>
+            <input type="text" id="Address" name="Address" placeholder="Address" ngModel>
+        </div>
+        <!-- <div class="form-group">
+            <label for="relationship">Relationship:</label>
+            <input type="text" id="relationship" name="relationship" placeholder="" ngModel>
+        </div> -->
+
+        <div class="form-group">
+            <label for="relationship">Relationship:</label>
+            <select id="relationship" name="relationship" ngModel required>
+                <option value="" disabled selected>Select Relationship</option>
+                <option value="father">Father</option>
+                <option value="mother">Mother</option>
+                <option value="brother">Brother</option>
+                <option value="sister">Sister</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+    
+    </div>
+
+    <!-- <button class="btn" type="submit" style="margin-left: 15rem; margin-top: rem;">Edit</button> -->
+    <button class="btn" type="submit" [disabled]="!addProduct.form.valid" style="margin-left: 22rem; margin-top: 2rem;">add</button>
+
+
+</form>
+
+</div>
+
+
+</div>
+
+</div>
+

@@ -1,0 +1,65 @@
+
+.form-section {
+    margin-bottom:20px
+}
+
+.form-group {
+    display: inline-block;
+    /* vertical-align: top;  */
+    margin-right: 50px; /* Add some spacing between form groups */
+
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    border-radius: 4px;
+    height: .7rem;
+    /* border: 1px solid #ccc; */
+    /* box-sizing: border-box; Ensure padding and border are included in width */
+    border-color:blue ;
+}
+
+.main{
+    background-image: linear-gradient(#FE6364, #FFFCE9); 
+    padding: 1rem;
+    width: fit-content;
+    width: 45rem;
+    margin-left: 14rem;
+    margin-top: 0rem;
+    height: 25rem;
+
+
+}
+
+.btn{
+
+    margin-left: 5rem;
+    width: 6rem;
+    height: 2rem;
+    border-radius: .6rem;
+    color: white;
+    background-color: red
+
+    
+}
+
+.btn[disabled] {
+    opacity: 0.5; /* Reduce opacity to visually indicate disabled state */
+    cursor: not-allowed; /* Change cursor to indicate unclickable */
+    /* Optionally, you can add other styles such as color, background color, etc. */
+  }
+
+.btn:hover
+{
+    cursor: pointer;
+    /* color: blue; */
+}
+

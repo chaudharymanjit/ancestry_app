@@ -1,0 +1,93 @@
+
+
+.form-section {
+    margin-bottom:20px
+}
+
+.form-group {
+    display: inline-block;
+    /* vertical-align: top;  */
+    margin-right: 90px; /* Add some spacing between form groups */
+
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    display: block;
+    width: 110%;
+    padding: 8px;
+    border-radius: 4px;
+    height: .7rem;
+    /* border: 1px solid #ccc; */
+    /* box-sizing: border-box; Ensure padding and border are included in width */
+    border-color:blue ;
+}
+
+.form-group select {
+    display: block;
+    width: 145%;
+    padding: 5px;
+    border-radius: 4px;
+    height: 2rem;
+    border: 2px solid #ccc;
+    border-color:blue ;
+}
+
+.content{
+    display: flex;
+    /* background-image: linear-gradient(#FF8384, #FFFDE9);  */
+
+}
+
+.btn{
+
+    width: 9rem;
+    height: 2rem;
+    border-radius: .8rem;
+    color: white;
+    background-color:blue
+}
+
+.btn:hover
+{
+    cursor: pointer;
+    color: white;
+    background-color:green;
+}
+
+
+.btn2{
+    width: 9rem;
+    height: 2rem;
+    border-radius: .8rem;
+    /* color: white; */
+    background-color: white;
+    margin-top: 1rem;
+    text-align: center;
+}
+.btn2:hover {
+    cursor: pointer;
+    color: white; /* Change text color on hover */
+    background-color: rgba(246, 24, 64, 0.63)
+}
+    
+ 
+
+.fun{
+    background-image: linear-gradient(#FF8384, #FFFDE9); 
+    /* Set linear gradient background color for the entire page */
+
+}
+
+.btn[disabled] {
+    opacity: 0.5; /* Reduce opacity to visually indicate disabled state */
+    cursor: not-allowed; /* Change cursor to indicate unclickable */
+  }
+
+
+

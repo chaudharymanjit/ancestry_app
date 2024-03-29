@@ -1,0 +1,177 @@
+{
+  "users": [
+    {
+      "id": "c8d2",
+      "surname": "Chaudhary",
+      "phone": "7488901024",
+      "dob": "2024-03-29",
+      "birthCity": "Gopalganj",
+      "name": "Manjeet",
+      "email": "mk960417@gmail.com"
+    },
+    {
+      "id": "37be",
+      "surname": "Chaudhary",
+      "phone": "9576414897",
+      "dob": "2024-03-29",
+      "birthCity": "gopalganj",
+      "name": "Ranjeet",
+      "email": "ranjit2k01@gamil.com"
+    },
+    {
+      "id": "413c",
+      "surname": "ahmad",
+      "phone": "7061552655",
+      "dob": "2001-12-24",
+      "birthCity": "gpj",
+      "name": "sohail",
+      "email": "sohailss2412@gmail.com"
+    }
+  ],
+  "members": [
+    {
+      "id": "92f3",
+      "name": "Laxman",
+      "surname": "Chaudhary",
+      "email": "mk960417@gmail.com",
+      "phone": "8969789387",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "father",
+      "rootId": "c8d2"
+    },
+    {
+      "id": "e398",
+      "name": "Bina",
+      "surname": "Devi",
+      "email": "mk960417@gmail.com",
+      "phone": "7488901024",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "mother",
+      "rootId": "c8d2"
+    },
+    {
+      "id": "d57d",
+      "name": "Nisha",
+      "surname": "Chaudhary",
+      "email": "mk960417@gmail.com",
+      "phone": "9939863254",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "sister",
+      "rootId": "c8d2"
+    },
+    {
+      "id": "83c8",
+      "name": "........",
+      "surname": "Chaudhary",
+      "email": "mk960417@gmail.com",
+      "phone": "9939863254",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "son",
+      "rootId": "c8d2"
+    },
+    {
+      "id": "5062",
+      "name": "................",
+      "surname": "Chaudhary",
+      "email": "mk960417@gmail.com",
+      "phone": "9939863254",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "brother-in-law",
+      "rootId": "c8d2"
+    },
+    {
+      "id": "c13a",
+      "name": ".........",
+      "surname": "Chaudhary",
+      "email": "mk960417@gmail.com",
+      "phone": "9939863254",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "nephew",
+      "rootId": "c8d2"
+    },
+    {
+      "id": "be5e",
+      "name": ".....",
+      "surname": "Chaudhary",
+      "email": "mk960417@gmail.com",
+      "phone": "9939863254",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "wife",
+      "rootId": "c8d2"
+    },
+    {
+      "id": "b743",
+      "name": "..",
+      "surname": "Chaudhary",
+      "email": "mk960417@gmail.com",
+      "phone": "9939863254",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "daughter-in-law",
+      "rootId": "c8d2"
+    },
+    {
+      "id": "5706",
+      "name": "Ranjeet",
+      "surname": "Chaudhary",
+      "email": "mk960417@gmail.com",
+      "phone": "9939863254",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "brother",
+      "rootId": "c8d2"
+    },
+    {
+      "id": "1847",
+      "name": "ravi",
+      "surname": "Chaudhary",
+      "email": "mk960417@gmail.com",
+      "phone": "9939863254",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "brother",
+      "rootId": "c8d2"
+    },
+    {
+      "id": "5920",
+      "name": "Rinku",
+      "surname": "Chaudhary",
+      "email": "mk960417@gmail.com",
+      "phone": "9939863254",
+      "dob": "2024-03-28",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "sister",
+      "rootId": "37be"
+    },
+    {
+      "id": "20f1",
+      "name": "Ranjeet",
+      "surname": "Chaudharyyyy",
+      "email": "mk960417@gmail.com",
+      "phone": "9939863254",
+      "dob": "2024-03-29",
+      "birthCity": "Gopalganj",
+      "Address": "barauli,Gopalganj",
+      "relationship": "nephew",
+      "rootId": "413c"
+    }
+  ]
+}

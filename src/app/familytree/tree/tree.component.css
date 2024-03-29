@@ -1,0 +1,167 @@
+.family-tree-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.parents::after {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+        transform: translateX(-50%);
+
+    width: 340px;
+    height: 1px;
+    background-color: black;
+}
+
+.me::after {
+    content: '';
+    position: absolute;
+    top: 35%;
+    left: 36.7%;
+    /* transform: translateX(-50%); */
+    width: 0.5px;
+    height: 22px;
+    background-color: black;
+}
+
+.sister::after {
+    content: '';
+    position: absolute;
+    top: 35%;
+    right: 36.7%;
+    /* transform: translateX(-50%); */
+    width: 0.5px;
+    height: 22px;
+    background-color: black;
+}
+
+.mother::before {
+    content: '';
+    position: absolute;
+    top: 14.5%; /* Adjust as needed based on the height of your member divs */
+    left: 50%;
+    /* transform: translateX(-50%); */
+    width: 0.5px; /* This is the thickness of your line */
+    height: 130px; /* This is the height of your line */
+    background-color: #000;
+}
+
+.son::before {
+    content: '';
+    position: absolute;
+    top: 45%; /* Adjust as needed based on the height of your member divs */
+    left: 30%;
+    /* transform: translateX(-50%); */
+    width: 0.5px; /* This is the thickness of your line */
+    height: 153px; /* This is the height of your line */
+    background-color: #000;
+}
+
+.nephew::before {
+    content: '';
+    position: absolute;
+    top: 45%; /* Adjust as needed based on the height of your member divs */
+    right: 30.5%;
+    /* transform: translateX(-50%); */
+    width: 0.5px; /* This is the thickness of your line */
+    height: 153px; /* This is the height of your line */
+    background-color: #000;
+}
+
+.generation {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.between {
+    flex: 1;
+    border: 0;
+    height: 1px; /* The thickness of the hr line */
+    background-color: gray; /* The color of the hr line */
+    margin-top: 40px; /* Add space on the left and right */
+  }
+
+.parents {
+    display: flex;
+    width: 20vw;
+    justify-content: space-between;
+}
+
+.child {
+    display: flex;
+    justify-content: space-around;
+    width: 80vw;
+}
+
+.children {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+.lowergen {
+    margin-right: 100px;
+}
+
+.leftChildDiv, .rightChildDiv{
+    display: flex;
+    width: 20vw;
+    justify-content: space-between;
+}
+
+.member {
+     border-radius: 50%; 
+     text-align: center; 
+    display: flex;
+    flex-direction: column;
+} 
+
+.img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 1px solid #000;
+
+}
+
+.member p {
+    margin-top: 10px;
+}
+
+.member-details {
+    transition: height 0.2s ease; /* Smooth transition for height change */
+  overflow: hidden;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    padding: 10px;
+    /* z-index: 10; */
+  }
+
+  .member-details.expanded {
+    /* Adjust the max-height to fit your content when expanded */
+    max-height: 200px; /* Example height */
+  }
+  
+  .view-more{
+    cursor: pointer;
+    color: dodgerblue;
+  }
+
+  .view-more-span {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+
+  
+  
+
+ 

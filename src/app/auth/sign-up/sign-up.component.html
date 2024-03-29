@@ -1,0 +1,84 @@
+<div class="wrapper" style=" width: 95%; height: 89vh; background-color: #FFFCE9; padding: 2rem;">
+
+<div class="content" style="margin-top:rem;">
+
+    
+
+    <div class="tree" style="margin-bottom: .5rem; margin-left: 6rem;">
+        <img height="15" src="../../assets/second-page/tree.png">
+        <span>Tree Link</span>
+      </div>
+
+      <img height="60" src="../../assets/second-page/profile.png" style="margin-left: 7rem;">
+
+  
+  
+<form (ngSubmit)="signUp()" #signupForm="ngForm">  
+   
+<div class="form-group">
+  <input type="text" id="user" name="user" [(ngModel)]="signUpObj.name" placeholder="Enter your user name" required>
+  <!-- <div *ngIf="!signUpObj.name" class="text-danger">*User name is required</div> -->
+</div>
+
+<div class="form-group">
+  <input type="email" id="email" name="email" [(ngModel)]="signUpObj.email" #emailInput="ngModel" placeholder="📧 example@gmail.com" required email>
+  <!-- <div *ngIf="!signUpObj.email" class="text-danger">Email is required</div> -->
+  <!-- <div *ngIf="emailInput.invalid && emailInput.touched" class="text-danger">Invalid email format</div> -->
+</div>
+
+
+<div class="form-group">
+  <input id="pass" type="password" id="password" name="password" [(ngModel)]="signUpObj.password" placeholder="Enter your password" required minlength="6">
+</div>
+    
+  
+  <div style="margin-left:5rem; width:fit-content ;">
+    <button class="btn" type="submit" [disabled]="!signupForm.form.valid">Sign Up</button>
+
+  </div>
+  
+</form> 
+  
+  
+    <div class="form-group" style="margin-top:3.75rem ; margin-left: 3rem;">
+      <i style="font-weight: bold;">Already a member ?</i><a style="text-decoration: none; font-weight: bold; color: #E30E0E
+      ;" href="/login">
+        <i>Log in</i>
+      </a>
+    </div>
+  
+    <div class="seperator" style="margin-left: 3rem;">
+      <span>
+        <hr>
+      </span>
+      <span>or</span>
+      <span>
+        <hr>
+      </span>
+    </div>
+  
+  
+  
+    <footer style="margin-left: 4rem;">
+      <span style="margin-right: 1rem;"><a href="https://www.google.com"><img src="../../assets/second-page/google-icon.png"
+            alt="Google"></a></span>
+      <span style="margin-right: 1rem;"><a href="https://www.instagram.com"><img
+            src="../../assets/second-page/insta-icon.png"></a></span>
+      <span><a href="https://www.facebook.com"><img src="../../assets/second-page/facebook-icon.png"></a></span>
+  
+    </footer>
+  
+  
+  
+  
+  
+  </div>
+  
+  <div class="footer-image" style="margin-left: 48rem; margin-top:-30rem;">
+    <img height="500" src="../../assets/second-page/Woman.png">
+  </div>
+
+  </div>
+
+  <!-- <router-outlet></router-outlet> -->
+

@@ -1,0 +1,97 @@
+
+<div style="background-color: #FFFCE9; height: 100vh;">
+<div class="display:flex">
+<img src="../../assets/tree-page/Family tree.png" style="width: 12%;margin-left: 3rem; margin-top: 2rem;">
+</div>
+
+<div class="display:flex">
+<img class="display:flex" src="../../assets/tree-page/tree-link.png" style="width: 12%;margin-left: 65rem;">
+</div>
+
+<div class="family-tree-container" style=" margin-top: -4.5rem;">
+  <div class="member-details" *ngIf="selectedMember" [ngStyle]="detailsStyles" style="background-color: lightgray; border-radius: 1rem;">
+    <div style="margin-bottom: 4px;">
+    <p>Name: &nbsp;&nbsp; {{ selectedMember.name }}</p>
+    <p>DOB:&nbsp;&nbsp; {{ selectedMember.dob | date }}</p>
+    <p>Relationship:&nbsp;&nbsp; {{ selectedMember.relationship }}</p>
+    <div *ngIf="showMoreDetails">
+      <p>Email:&nbsp; &nbsp; {{ selectedMember.email }}</p>
+      <p>Phone:&nbsp; &nbsp; {{ selectedMember.phone }}</p>
+      <p>Surname:&nbsp; &nbsp; {{ selectedMember.surname }}</p>
+      <p>Birth City:&nbsp; &nbsp; {{ selectedMember.birthCity }}</p>
+      <p>Address:&nbsp; &nbsp; {{ selectedMember.Address }}</p>
+    </div>
+  </div>
+  <span class="view-more-span">
+    <a class="view-more" (click)="toggleDetails()">{{ showMoreDetails ? 'View Less' : 'View More' }}</a>
+    <a class="view-more" (click)="editMember(selectedMember.id)">Edit</a>
+  </span>
+
+  </div>
+  <div class="generation parents">
+    <div class="member father"  (click)="selectMember($event,getMemberByRelation('father')?.id)" [class.selected]="selectedMember?.relationship === 'father'" style="cursor: pointer;">
+      <img class="img" src="../../assets/tree-page/father.jpg">
+      <p>Father</p>
+    </div>
+    <hr class="between">
+    <div class="member mother" (click)="selectMember($event,getMemberByRelation('mother')?.id)" [class.selected]="selectedMember?.relationship === 'Mother'"  style="cursor: pointer;">
+      <img class="img" src="../../assets/tree-page/mother.jpg">
+      <p>Mother</p>
+    </div>
+  </div>
+  <br>
+  <br>
+  <br>
+  <div class="generation child">
+    <div class="leftChildDiv">
+      <div class="member wife" (click)="selectMember($event,getMemberByRelation('wife')?.id)" [class.selected]="selectedMember?.relationship === 'Wife'" style="cursor: pointer;">
+        <img class="img" src="../../assets/tree-page/wife.jpg">
+        <p>Wife</p>
+      </div>
+      <hr class="between">
+      <div class="member me">
+        <img class="img" src="../../assets/tree-page/me.jpg">
+        <p>Me</p>
+      </div>
+    </div>
+    <div class="rightChildDiv">
+      <div class="member sister" (click)="selectMember($event,getMemberByRelation('sister')?.id)" [class.selected]="selectedMember?.relationship === 'Sister'" style="cursor: pointer;">
+        <img class="img" src="../../assets/tree-page/sister.jpg">
+        <p>Sister</p>
+      </div>
+      <hr class="between">
+      <div class="member brother-in-law" (click)="selectMember($event,getMemberByRelation('brother-in-law')?.id)" [class.selected]="selectedMember?.relationship === 'Brother-in-law'" style="cursor: pointer;">
+        <img class="img" src="../../assets/tree-page/brother in law.jpg">
+        <p>Brother in Law</p>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>  
+  <br>
+  <div class="generation children">
+    <div class="leftChildDiv lowergen">
+
+    <div class="member daughter-in-law" (click)="selectMember($event,getMemberByRelation('daughter-in-law')?.id)" [class.selected]="selectedMember?.relationship === 'Daughter-in-law'" style="cursor: pointer;">
+      <img class="img" src="../../assets/tree-page/daughter in law.jpg">
+      <p class="datinlaw" >Daughter</p>
+      <p>in law</p>
+    </div>
+    <hr class="between">
+    <div class="member son" (click)="selectMember($event,getMemberByRelation('son')?.id)" [class.selected]="selectedMember?.relationship === 'Son'" style="cursor: pointer;">
+      <img class="img" src="../../assets/tree-page/son.jpg">
+      <p>Son</p>
+    </div>
+    </div>
+
+    
+    <div class="rightChildDiv">
+    <div class="member nephew" (click)="selectMember($event,getMemberByRelation('nephew')?.id)" [class.selected]="selectedMember?.relationship === 'Nephew'" style="cursor: pointer;">
+      <img class="img" src="../../assets/tree-page/nephew.jpg" style="background-color: grey;">
+      <p>Nephew</p>
+    </div>
+  </div>
+  </div>
+</div>
+
+</div>

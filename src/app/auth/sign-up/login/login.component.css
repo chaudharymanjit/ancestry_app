@@ -1,0 +1,63 @@
+
+.form-group {
+    margin-bottom: 1rem;
+    /* Add margin between form groups */
+
+}
+
+#email, #confirmPassword, 
+#password {
+    width: 17rem;
+    height: 1.9rem;
+    border-radius: 10px;
+    padding: 0 6px;
+}
+
+
+.btn {
+    color: white;
+    background-color: black;
+    border-radius:.7rem ;
+    width: 8rem;
+    height: 2rem;
+    
+}
+
+.btn:hover {
+    cursor: pointer;
+    
+
+}
+
+.content {
+    background-image: linear-gradient(#FE6364, #FFFCE9);
+    padding: 80px;
+    width: fit-content;
+    height: fit-content;
+   
+    margin: auto;
+    border-radius:2rem ;
+}
+
+.seperator{
+    display: flex;
+    width: 50%;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.seperator>span>hr{
+    background-color: black;
+    width: 70px;
+}
+
+.btn[disabled] {
+    opacity: 0.5; /* Reduce opacity to visually indicate disabled state */
+    cursor: not-allowed; /* Change cursor to indicate unclickable */
+    /* Optionally, you can add other styles such as color, background color, etc. */
+  }
+
+
+
+

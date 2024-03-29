@@ -1,0 +1,77 @@
+<!-- <div class="wrapper" style=" width: 90%; height: 85vh; background-color: #FFFCE9; padding: 2rem;"> -->
+
+  <div class="content" style="margin-top:2rem;">
+
+    
+
+    <div class="tree" style="margin-bottom: .5rem; margin-left: 6rem;">
+        <img height="20" src="../../assets/second-page/tree.png">
+        <span style="font-size: 1rem;">Tree Link</span>
+      </div>
+
+       <div style="margin-left: 7rem;
+       margin-top: 1rem;
+       margin-bottom: 2rem;">
+        <h2>Log in</h2>
+       </div>
+
+  
+  
+    <form (ngSubmit)="login()" #signupForm="ngForm"  >
+      <div class="form-group">
+        <input type="email" id="email" name="email" [(ngModel)]="loginObj.email" placeholder="📧 example@gmail.com"
+          required email>
+      </div>
+      <div class="form-group">
+        <span><input id="pass" type="password" id="password" name="password" [(ngModel)]="loginObj.password"
+            placeholder="Enter your password" required password  minlength="7">
+        </span>
+      </div>
+  
+  
+      <div style="margin-left:5rem; width:fit-content ;">
+        <button class="btn" type="submit" [disabled]="!signupForm.form.valid">Log in</button>
+      </div>
+  
+    </form>
+  
+  
+    <div class="form-group" style="margin-top:3.75rem ; margin-left: 3rem;">
+      <i style="font-weight: bold;">Already a member ?</i><a style="text-decoration: none; font-weight: bold; color: #E30E0E
+      ;" href="/sign-up">
+        <i>Sign up</i>
+      </a>
+    </div>
+  
+    <div class="seperator" style="margin-left: 3rem;">
+      <span>
+        <hr>
+      </span>
+      <span>or</span>
+      <span>
+        <hr>
+      </span>
+    </div>
+  
+  
+  
+    <footer style="margin-left: 4rem;">
+      <span style="margin-right: 1rem;"><a href="https://www.google.com"><img src="../../assets/second-page/google-icon.png"
+            alt="Google"></a></span>
+      <span style="margin-right: 1rem;"><a href="https://www.instagram.com"><img
+            src="../../assets/second-page/insta-icon.png"></a></span>
+      <span><a href="https://www.facebook.com"><img src="../../assets/second-page/facebook-icon.png"></a></span>
+  
+    </footer>
+  
+  
+  
+  
+  
+  </div>
+  
+  <div class="footer-image" style="margin-left: 15rem; margin-top:-30rem;">
+    <img height="500" src="../../assets/third-page/Man.png">
+  </div>
+
+  <!-- </div> -->

@@ -1,0 +1,73 @@
+<div class="wrapper" style=" width: 92%; height: 84vh; background-color: #FFFCE9; padding: 3rem;">
+    <img src="../../assets/treeLinkLogo.png">
+
+
+    <div class="main" style="margin-left:11rem ;">
+
+        <div>
+
+            <img height="80" width="80" src="../../assets/fourth-page/user-profile.jpg"
+                style="margin-left:5rem; margin-top: 2rem; border-radius: 3rem; border-color:green;">
+
+            <!-- 
+<button (click)="inputField.click()">
+    <mat-icon>home</mat-icon>
+</button> -->
+
+        </div>
+        <input #inputField type="file" hidden>
+
+
+
+        <h1 style="margin-left: 13rem;margin-top: -4rem;">Add Profile</h1>
+        <!-- <div style="margin-left: 30rem; margin-top: -1rem;"> -->
+
+
+        <button routerLink="/DisplayProfile" class="btn" type="submit" (click)="viewProfile()"
+            style=" margin-top: 3rem;   color:white; background-color: green;">view-profile</button>
+
+        <!-- </div>  -->
+
+        <form (ngSubmit)="Add(addProduct.value)" #addProduct="ngForm" style="margin-left:13rem; margin-top: 1.5rem;">
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="First Name" [(ngModel)]="userName" [disabled]="true" required>
+                </div>
+                <div class="form-group">
+                    <label for="surname">Surname:</label>
+                    <input type="text" id="surname" name="surname" placeholder="Last Name" ngModel required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Email Address" [(ngModel)]="email" [disabled]="true" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">PhoneNo:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="91+" ngModel required>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <div class="form-group" style="width: 11rem;">
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" name="dob" ngModel required>
+                </div>
+                <div class="form-group" style="width: 12rem;">
+                    <label for="birthCity">Birth City:</label>
+                    <input type="text" id="birthCity" name="birthCity" placeholder="City" ngModel required>
+                </div>
+            </div>
+
+            <button class="btn" type="submit" [disabled]="!addProduct.form.valid"
+                style="margin-left: 22rem; margin-top: 1rem;" (click)="openSuccessDialog()">add</button>
+        </form>
+
+
+    </div>
+
+</div>
