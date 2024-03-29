@@ -17,11 +17,11 @@ export class profileService{
 
   addprofile(data:UserData){
 
-    return this.http.post('http://localhost:3000/users', data);
+    return this.http.post('http://localhost:3001/api/users', data);
    }
 
   profile(){
-    return this.http.get('http://localhost:3000/users')
+    return this.http.get('http://localhost:3001/api/users')
   }
 
 

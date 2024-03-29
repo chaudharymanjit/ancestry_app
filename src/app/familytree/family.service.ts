@@ -31,8 +31,8 @@ export class familyService {
                 userData => {
                     console.log("Received userData:", userData); // Log the received userData
 
-                    if (userData && userData.id) {
-                        this.userId = userData.id;
+                    if (userData && userData._id) {
+                        this.userId = userData._id;
                         console.log("UserId set to:", this.userId); // Log the set userId
 
                         this.addMembers(userData);
@@ -60,17 +60,17 @@ export class familyService {
 
 
     addMembers(data: membersData) {
-
         const userId = this.getUserId();
 
         if (userId !== null) {
-            data.rootId = userId; 
+            data.rootId = userId;
+            console.log(data.rootId, "jlihukggfcvhbj")
         }
-        return this.http.post('http://localhost:3000/members', data);
+        return this.http.post('http://localhost:3001/api/members', data);
     }
 
     updateMember(data: membersData) {
-        const url = `http://localhost:3000/members/${data.id}`;
+        const url = `http://localhost:3001/api/members/${data._id}`;
         return this.http.put(url, data);
     }
 }

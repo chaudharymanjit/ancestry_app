@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",
+    "build": "npm run cleanup && npm run compiler",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

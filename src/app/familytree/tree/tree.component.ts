@@ -39,7 +39,7 @@ export class TreeComponent implements OnInit {
   }
 
   editMember(memberId: string): void {
-    const member = this.members.find(m => m.id === memberId);
+    const member = this.members.find(m => m._id === memberId);
     if (member) {
       this.familyService.setMemberToEdit(member);
       // Here you would navigate to the edit page
@@ -57,13 +57,13 @@ export class TreeComponent implements OnInit {
     }
   
     // Check if the selected member is being clicked again
-    if (this.selectedMember && this.selectedMember.id === memberId) {
+    if (this.selectedMember && this.selectedMember._id === memberId) {
       this.deselectMember();
       return;
     }
   
     // Find the member in the members array based on the memberId
-    const member = this.members.find(m => m.id === memberId);
+    const member = this.members.find(m => m._id === memberId);
     if (member) {
       this.selectedMember = member;
       const boxWidth = 200; // Width of the details box, adjust as needed
@@ -75,7 +75,7 @@ export class TreeComponent implements OnInit {
         'left': `${event.clientX - boxWidth / 2}px`, // Center the box horizontally on the click
         'display': 'block' // Make sure it's visible
       };
-      const element = document.getElementById(member.id);
+      const element = document.getElementById(member._id);
       if (element) {
         element.classList.add('selected');
       }
@@ -85,8 +85,8 @@ export class TreeComponent implements OnInit {
   }
   
   deselectMember(): void {
-    if (this.selectedMember && this.selectedMember.id) {
-      const element = document.getElementById(this.selectedMember.id);
+    if (this.selectedMember && this.selectedMember._id) {
+      const element = document.getElementById(this.selectedMember._id);
       if (element) {
         element.classList.remove('selected');
       }
@@ -106,7 +106,7 @@ export class TreeComponent implements OnInit {
   
   private createFamilyTree(members: FamilyMember[]): FamilyMember[] {
     // Create a map with all members
-    const membersMap = new Map<string, FamilyMember>(members.map(member => [member.id, {
+    const membersMap = new Map<string, FamilyMember>(members.map(member => [member._id, {
       ...member,
       children: []
     }]));
@@ -118,19 +118,19 @@ export class TreeComponent implements OnInit {
         const parent = membersMap.get(member.rootId);
         if (parent) {
           // Use a variable to hold the value obtained from the map
-          const childMember = membersMap.get(member.id);
+          const childMember = membersMap.get(member._id);
           // Check if the value exists before pushing it to the parent's children array
           if (childMember) {
             parent.children.push(childMember);
           } else {
-            console.error(`Member with ID ${member.id} not found`);
+            console.error(`Member with ID ${member._id} not found`);
           }
         } else {
           console.error(`Parent with ID ${member.rootId} not found`);
         }
       } else {
         // If there is no rootId, consider this member as one of the roots of the tree
-        const rootMember = membersMap.get(member.id);
+        const rootMember = membersMap.get(member._id);
         if (rootMember) {
           tree.push(rootMember);
         }
@@ -142,7 +142,7 @@ export class TreeComponent implements OnInit {
 
   private findRootMember(members: FamilyMember[], rootId: string): FamilyMember | undefined {
     // This function finds the root member in the hierarchical tree
-    return members.find(member => member.id === rootId);
+    return members.find(member => member._id === rootId);
   }
 
   // You might also want to include other utility functions to handle user interactions
@@ -154,7 +154,7 @@ export class FamilyService {
   constructor(private http: HttpClient) {}
 
   getFamilyMembers(rootId: string): Observable<FamilyMember[]> {
-    return this.http.get<FamilyMember[]>(`http://localhost:3000/members?rootId=${rootId}`);
+    return this.http.get<FamilyMember[]>(`http://localhost:3001/api/members?rootId=${rootId}`);
   }
   private memberToEdit: FamilyMember | null = null;
 

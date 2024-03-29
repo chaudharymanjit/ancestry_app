@@ -24,17 +24,17 @@
   </div>
   <span class="view-more-span">
     <a class="view-more" (click)="toggleDetails()">{{ showMoreDetails ? 'View Less' : 'View More' }}</a>
-    <a class="view-more" (click)="editMember(selectedMember.id)">Edit</a>
+    <a class="view-more" (click)="editMember(selectedMember._id)">Edit</a>
   </span>
 
   </div>
   <div class="generation parents">
-    <div class="member father"  (click)="selectMember($event,getMemberByRelation('father')?.id)" [class.selected]="selectedMember?.relationship === 'father'" style="cursor: pointer;">
+    <div class="member father"  (click)="selectMember($event,getMemberByRelation('father')?._id)" [class.selected]="selectedMember?.relationship === 'father'" style="cursor: pointer;">
       <img class="img" src="../../assets/tree-page/father.jpg">
       <p>Father</p>
     </div>
     <hr class="between">
-    <div class="member mother" (click)="selectMember($event,getMemberByRelation('mother')?.id)" [class.selected]="selectedMember?.relationship === 'Mother'"  style="cursor: pointer;">
+    <div class="member mother" (click)="selectMember($event,getMemberByRelation('mother')?._id)" [class.selected]="selectedMember?.relationship === 'Mother'"  style="cursor: pointer;">
       <img class="img" src="../../assets/tree-page/mother.jpg">
       <p>Mother</p>
     </div>
@@ -44,7 +44,7 @@
   <br>
   <div class="generation child">
     <div class="leftChildDiv">
-      <div class="member wife" (click)="selectMember($event,getMemberByRelation('wife')?.id)" [class.selected]="selectedMember?.relationship === 'Wife'" style="cursor: pointer;">
+      <div class="member wife" (click)="selectMember($event,getMemberByRelation('wife')?._id)" [class.selected]="selectedMember?.relationship === 'Wife'" style="cursor: pointer;">
         <img class="img" src="../../assets/tree-page/wife.jpg">
         <p>Wife</p>
       </div>
@@ -55,12 +55,12 @@
       </div>
     </div>
     <div class="rightChildDiv">
-      <div class="member sister" (click)="selectMember($event,getMemberByRelation('sister')?.id)" [class.selected]="selectedMember?.relationship === 'Sister'" style="cursor: pointer;">
+      <div class="member sister" (click)="selectMember($event,getMemberByRelation('sister')?._id)" [class.selected]="selectedMember?.relationship === 'Sister'" style="cursor: pointer;">
         <img class="img" src="../../assets/tree-page/sister.jpg">
         <p>Sister</p>
       </div>
       <hr class="between">
-      <div class="member brother-in-law" (click)="selectMember($event,getMemberByRelation('brother-in-law')?.id)" [class.selected]="selectedMember?.relationship === 'Brother-in-law'" style="cursor: pointer;">
+      <div class="member brother-in-law" (click)="selectMember($event,getMemberByRelation('brother-in-law')?._id)" [class.selected]="selectedMember?.relationship === 'Brother-in-law'" style="cursor: pointer;">
         <img class="img" src="../../assets/tree-page/brother in law.jpg">
         <p>Brother in Law</p>
       </div>
@@ -72,13 +72,13 @@
   <div class="generation children">
     <div class="leftChildDiv lowergen">
 
-    <div class="member daughter-in-law" (click)="selectMember($event,getMemberByRelation('daughter-in-law')?.id)" [class.selected]="selectedMember?.relationship === 'Daughter-in-law'" style="cursor: pointer;">
+    <div class="member daughter-in-law" (click)="selectMember($event,getMemberByRelation('daughter-in-law')?._id)" [class.selected]="selectedMember?.relationship === 'Daughter-in-law'" style="cursor: pointer;">
       <img class="img" src="../../assets/tree-page/daughter in law.jpg">
       <p class="datinlaw" >Daughter</p>
       <p>in law</p>
     </div>
     <hr class="between">
-    <div class="member son" (click)="selectMember($event,getMemberByRelation('son')?.id)" [class.selected]="selectedMember?.relationship === 'Son'" style="cursor: pointer;">
+    <div class="member son" (click)="selectMember($event,getMemberByRelation('son')?._id)" [class.selected]="selectedMember?.relationship === 'Son'" style="cursor: pointer;">
       <img class="img" src="../../assets/tree-page/son.jpg">
       <p>Son</p>
     </div>
@@ -86,7 +86,7 @@
 
     
     <div class="rightChildDiv">
-    <div class="member nephew" (click)="selectMember($event,getMemberByRelation('nephew')?.id)" [class.selected]="selectedMember?.relationship === 'Nephew'" style="cursor: pointer;">
+    <div class="member nephew" (click)="selectMember($event,getMemberByRelation('nephew')?._id)" [class.selected]="selectedMember?.relationship === 'Nephew'" style="cursor: pointer;">
       <img class="img" src="../../assets/tree-page/nephew.jpg" style="background-color: grey;">
       <p>Nephew</p>
     </div>
