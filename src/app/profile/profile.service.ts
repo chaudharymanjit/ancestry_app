@@ -17,11 +17,11 @@ export class profileService{
 
   addprofile(data:UserData){
 
-    return this.http.post('http://localhost:3001/api/users', data);
+    return this.http.post('https://ancestry-api.onrender.com/api/users', data);
    }
 
   profile(){
-    return this.http.get('http://localhost:3001/api/users')
+    return this.http.get('https://ancestry-api.onrender.com/api/users')
   }
 
 

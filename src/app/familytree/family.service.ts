@@ -66,11 +66,11 @@ export class familyService {
             data.rootId = userId;
             console.log(data.rootId, "jlihukggfcvhbj")
         }
-        return this.http.post('http://localhost:3001/api/members', data);
+        return this.http.post('https://ancestry-api.onrender.com/api/members', data);
     }
 
     updateMember(data: membersData) {
-        const url = `http://localhost:3001/api/members/${data._id}`;
+        const url = `https://ancestry-api.onrender.com/api/members/${data._id}`;
         return this.http.put(url, data);
     }
 }

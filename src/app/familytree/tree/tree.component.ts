@@ -154,7 +154,7 @@ export class FamilyService {
   constructor(private http: HttpClient) {}
 
   getFamilyMembers(rootId: string): Observable<FamilyMember[]> {
-    return this.http.get<FamilyMember[]>(`http://localhost:3001/api/members?rootId=${rootId}`);
+    return this.http.get<FamilyMember[]>(`https://ancestry-api.onrender.com/api/members?rootId=${rootId}`);
   }
   private memberToEdit: FamilyMember | null = null;
 
