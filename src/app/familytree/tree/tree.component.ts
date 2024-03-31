@@ -13,6 +13,7 @@ import { familyService } from '../family.service';
 export class TreeComponent implements OnInit {
   showMoreDetails: boolean = false;
   selectedMember: FamilyMember | null = null;
+  userId!: string;
   @Input() member: FamilyMember | undefined;
   members: FamilyMember[] = []; // Ensure members is an array of FamilyMember objects
   
@@ -21,6 +22,9 @@ export class TreeComponent implements OnInit {
   ngOnInit(): void {
     // const rootId = 'ee17';
      const rootId = this.service.getUserId()
+     if(rootId) {
+      this.userId = rootId
+     }
      if (rootId !== null) {
       this.familyService.getFamilyMembers(rootId).subscribe(
           (members) => { this.members = members; },
@@ -63,7 +67,7 @@ export class TreeComponent implements OnInit {
     }
   
     // Find the member in the members array based on the memberId
-    const member = this.members.find(m => m._id === memberId);
+    const member = this.members.find(m => m._id === memberId && m.rootId === this.userId);
     if (member) {
       this.selectedMember = member;
       const boxWidth = 200; // Width of the details box, adjust as needed
