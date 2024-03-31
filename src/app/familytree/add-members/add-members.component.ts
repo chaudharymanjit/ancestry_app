@@ -26,7 +26,7 @@ export class AddMembersComponent implements OnInit {
       _id:'',
       name: 'Ranjeet',
       surname: 'Chaudhary',
-      email: 'mk960417@gmail.com',
+      email: '',
       phone: '9939863254',
       dob: new Date().toISOString().substring(0, 10),
       birthCity: 'Gopalganj',
