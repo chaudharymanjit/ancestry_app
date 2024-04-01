@@ -13,7 +13,7 @@ import { familyService } from '../family.service';
 export class TreeComponent implements OnInit {
   showMoreDetails: boolean = false;
   selectedMember: FamilyMember | null = null;
-  rootId!: string |null;
+  // rootId!: string |null;
   @Input() member: FamilyMember | undefined;
   members: FamilyMember[] = []; // Ensure members is an array of FamilyMember objects
   
@@ -25,20 +25,14 @@ export class TreeComponent implements OnInit {
   ngOnInit(): void {
   
 
-      // this.rootId = this.service.getUserId()
+      const rootId= this.service.getUserId()
 
-     this.rootId='660a10f3d689c7121e700141'
-
-    //  console.log(this.rootId)
-
-    //  if(rootId!==null) {
-    //   this.userId = rootId
-    //  }
+    //  this.rootId='660a10f3d689c7121e700141'
 
 
-     if (this.rootId !== null) {
+     if (rootId !== null) {
 
-      this.familyService.getFamilyMembers(this.rootId).subscribe(
+      this.familyService.getFamilyMembers(rootId).subscribe(
           (members) => { this.members = members; },
           (error) => { console.error('Error fetching members data', error); }
       );
@@ -78,11 +72,11 @@ export class TreeComponent implements OnInit {
       return;
     }
     
-    console.log("Attempting to find memberId:", memberId, "with rootId:", this.rootId);
+    // console.log("Attempting to find memberId:", memberId, "with rootId:", this.rootId);
     console.log("Current members:", this.members);
       
     // Find the member in the members array based on the memberId and matching this.rootId
-    const member = this.members.find(m => m._id === memberId && m.rootId && m.rootId._id === this.rootId);
+    const member = this.members.find(m => m._id === memberId);
     if (member) {
       this.selectedMember = member;
 
