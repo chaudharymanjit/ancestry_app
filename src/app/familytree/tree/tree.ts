@@ -1,3 +1,8 @@
+
+export interface rootId {
+  _id: string;
+}
+
 export interface FamilyMember {
   _id: string;
   name: string;
@@ -8,6 +13,8 @@ export interface FamilyMember {
   birthCity?: string;
   Address?: string;
   relationship: string;
-  rootId?: string;
+  rootId?: rootId;  // Updated to be of type RootId
   children: FamilyMember[];
 }
+
+

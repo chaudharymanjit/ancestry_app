@@ -13,20 +13,32 @@ import { familyService } from '../family.service';
 export class TreeComponent implements OnInit {
   showMoreDetails: boolean = false;
   selectedMember: FamilyMember | null = null;
-  userId!: string;
+  rootId!: string |null;
   @Input() member: FamilyMember | undefined;
   members: FamilyMember[] = []; // Ensure members is an array of FamilyMember objects
   
-  constructor(private http: HttpClient, private familyService: FamilyService, private router: Router,private service:familyService) {}
+  constructor(private http: HttpClient, private familyService: FamilyService, private router: Router,private service:familyService) {
+
+
+  }
 
   ngOnInit(): void {
-    // const rootId = 'ee17';
-     const rootId = this.service.getUserId()
-     if(rootId) {
-      this.userId = rootId
-     }
-     if (rootId !== null) {
-      this.familyService.getFamilyMembers(rootId).subscribe(
+  
+
+      // this.rootId = this.service.getUserId()
+
+     this.rootId='660a10f3d689c7121e700141'
+
+    //  console.log(this.rootId)
+
+    //  if(rootId!==null) {
+    //   this.userId = rootId
+    //  }
+
+
+     if (this.rootId !== null) {
+
+      this.familyService.getFamilyMembers(this.rootId).subscribe(
           (members) => { this.members = members; },
           (error) => { console.error('Error fetching members data', error); }
       );
@@ -65,28 +77,30 @@ export class TreeComponent implements OnInit {
       this.deselectMember();
       return;
     }
-  
-    // Find the member in the members array based on the memberId
-    const member = this.members.find(m => m._id === memberId && m.rootId === this.userId);
+    
+    console.log("Attempting to find memberId:", memberId, "with rootId:", this.rootId);
+    console.log("Current members:", this.members);
+      
+    // Find the member in the members array based on the memberId and matching this.rootId
+    const member = this.members.find(m => m._id === memberId && m.rootId && m.rootId._id === this.rootId);
     if (member) {
       this.selectedMember = member;
-      const boxWidth = 200; // Width of the details box, adjust as needed
-      const offsetY = 30; // Vertical offset from the clicked point
-      
+
+      const offsetX = 10;  // Adjust if necessary
+      const offsetY = 10;  // Adjust if necessary
       this.detailsStyles = {
         'position': 'absolute',
         'top': `${event.clientY + offsetY}px`,
-        'left': `${event.clientX - boxWidth / 2}px`, // Center the box horizontally on the click
-        'display': 'block' // Make sure it's visible
+        'left': `${event.clientX + offsetX}px`,
+        'display': 'block'
       };
-      const element = document.getElementById(member._id);
-      if (element) {
-        element.classList.add('selected');
-      }
+      // ...existing logic for setting detailsStyles and updating the class list...
     } else {
-      console.error(`Member with ID ${memberId} not found`);
+      console.error(`Member with ID ${memberId} not found or does not match the root ID`);
     }
   }
+  
+  
   
   deselectMember(): void {
     if (this.selectedMember && this.selectedMember._id) {
@@ -108,46 +122,46 @@ export class TreeComponent implements OnInit {
   }
   
   
-  private createFamilyTree(members: FamilyMember[]): FamilyMember[] {
-    // Create a map with all members
-    const membersMap = new Map<string, FamilyMember>(members.map(member => [member._id, {
-      ...member,
-      children: []
-    }]));
+  // private createFamilyTree(members: FamilyMember[]): FamilyMember[] {
+  //   // Create a map with all members
+  //   const membersMap = new Map<string, FamilyMember>(members.map(member => [member._id, {
+  //     ...member,
+  //     children: []
+  //   }]));
 
-    // Establish parent-child relationships
-    const tree: FamilyMember[] = [];
-    members.forEach(member => {
-      if (member.rootId) {
-        const parent = membersMap.get(member.rootId);
-        if (parent) {
-          // Use a variable to hold the value obtained from the map
-          const childMember = membersMap.get(member._id);
-          // Check if the value exists before pushing it to the parent's children array
-          if (childMember) {
-            parent.children.push(childMember);
-          } else {
-            console.error(`Member with ID ${member._id} not found`);
-          }
-        } else {
-          console.error(`Parent with ID ${member.rootId} not found`);
-        }
-      } else {
-        // If there is no rootId, consider this member as one of the roots of the tree
-        const rootMember = membersMap.get(member._id);
-        if (rootMember) {
-          tree.push(rootMember);
-        }
-      }
-    });
+  //   // Establish parent-child relationships
+  //   const tree: FamilyMember[] = [];
+  //   members.forEach(member => {
+  //     if (member.rootId) {
+  //       const parent = membersMap.get(member.rootId);
+  //       if (parent) {
+  //         // Use a variable to hold the value obtained from the map
+  //         const childMember = membersMap.get(member._id);
+  //         // Check if the value exists before pushing it to the parent's children array
+  //         if (childMember) {
+  //           parent.children.push(childMember);
+  //         } else {
+  //           console.error(`Member with ID ${member._id} not found`);
+  //         }
+  //       } else {
+  //         console.error(`Parent with ID ${member.rootId} not found`);
+  //       }
+  //     } else {
+  //       // If there is no rootId, consider this member as one of the roots of the tree
+  //       const rootMember = membersMap.get(member._id);
+  //       if (rootMember) {
+  //         tree.push(rootMember);
+  //       }
+  //     }
+  //   });
     
-    return tree.filter(member => !member.rootId); // Return only the root members
-  }
+  //   return tree.filter(member => !member.rootId); // Return only the root members
+  // }
 
-  private findRootMember(members: FamilyMember[], rootId: string): FamilyMember | undefined {
-    // This function finds the root member in the hierarchical tree
-    return members.find(member => member._id === rootId);
-  }
+  // private findRootMember(members: FamilyMember[], rootId: string): FamilyMember | undefined {
+  //   // This function finds the root member in the hierarchical tree
+  //   return members.find(member => member._id === rootId);
+  // }
 
   // You might also want to include other utility functions to handle user interactions
   // such as adding, editing, or removing family members from the tree.

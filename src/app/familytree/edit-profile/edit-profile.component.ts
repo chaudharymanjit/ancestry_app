@@ -15,19 +15,17 @@ export class EditProfileComponent implements OnInit {
 
   constructor(private service: familyService, private familyService: FamilyService, public dialog: MatDialog) { }
 
-
   ngOnInit(): void {
-
     const memberToEdit = this.familyService.getMemberToEdit();
     if (memberToEdit) {
       this.formData = {
         ...memberToEdit,
-        dob: memberToEdit.dob ? new Date(memberToEdit.dob).toISOString().substring(0, 10) : ''
-        
+        dob: memberToEdit.dob ? new Date(memberToEdit.dob).toISOString().substring(0, 10) : '',
+        rootId: memberToEdit.rootId ? memberToEdit.rootId._id : undefined  // Extract the _id from rootId if it's an object
       };
     }
-
   }
+  
 
 
 
