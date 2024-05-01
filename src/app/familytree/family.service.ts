@@ -19,6 +19,7 @@ export class familyService {
 
 
     constructor(private http: HttpClient, private userService: UserService) {
+        
 
 
         const localData = localStorage.getItem('signUpUser');
@@ -47,12 +48,12 @@ export class familyService {
         }
 
     }
-    ngOnInit() {
-
-        // Unlike components, services in Angular do not have lifecycle hooks like ngOnInit. If you are placing initialization code in ngOnInit inside your service, it won't be executed. Initialization in services is typically done in the constructor or in a method that is explicitly called from a component.        
-    }
+   
+    
 
     getUserId(): string | null {
+
+        console.log(this.userId,"huu")
 
         return this.userId;
     }
